@@ -1,0 +1,92 @@
+{
+    "pages": {
+      "about": {
+        "title": "About Us",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "About Us", "path": "/about" }
+        ]
+      },
+
+      "services": {
+        "title": "Services",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Services", "path": "/services" }
+        ]
+      },
+
+      "events": {
+        "title": "Events",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Events", "path": "/events" }
+        ]
+      },
+      
+      "contact": {
+        "title": "Contact Us",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Contact", "path": "/contact" }
+        ]
+      },
+
+      "career": {
+        "title": "Recent Openings",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Job Openings", "path": "/career" }
+        ]
+      },
+
+      "startups": {
+        "title": "Startups Profile",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Startup Profile", "path": "/career" }
+        ]
+      },
+
+      "womencell": {
+        "title": "Women Cell",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Women Cell", "path": "/women-cell" }
+        ]
+      },
+
+      "startupregister": {
+        "title": "Register your startup idea",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Startup Registration", "path": "/startup-register" }
+        ]
+      },
+
+      "mentorregister": {
+        "title": "Join as a Startup Mentor",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Startup Mentor", "path": "/mentor-register" }
+        ]
+      },
+
+      "investorregister": {
+        "title": "Join as a Investor",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Startup Investor", "path": "/investor-register" }
+        ]
+      },
+
+      "partnerregister": {
+        "title": "Join as a Partner",
+        "breadcrumbs": [
+          { "label": "Home", "path": "/" },
+          { "label": "Startup Partner", "path": "/partner-register" }
+        ]
+      }
+
+    }
+  }
