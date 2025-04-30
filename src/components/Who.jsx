@@ -15,17 +15,17 @@ const Who = () => {
   const contentControls = useAnimation();
   const statsControls = useAnimation();
 
-  // Modified settings to trigger animations much earlier
+  // Trigger animations much earlier with increased threshold
   const contentInView = useInView(contentRef, {
     once: false,
-    amount: 0.02, // Trigger when just 5% is visible (reduced from 10%)
-    margin: "0px 0px -300px 0px" // Increased negative margin to trigger much earlier
+    amount: 0.01, // Trigger when almost any part is visible
+    margin: "0px 0px -400px 0px" // Much larger negative margin to trigger even earlier
   });
 
   const statsInView = useInView(statsRef, {
     once: false,
-    amount: 0.02, // Reduced to 5%
-    margin: "0px 0px -300px 0px" // Increased negative margin
+    amount: 0.01, // Almost any visibility triggers
+    margin: "0px 0px -400px 0px" // Much larger negative margin
   });
 
   // Handle content animations based on viewport
@@ -50,7 +50,7 @@ const Who = () => {
     }
   }, [statsInView, statsControls]);
 
-  // Counter animation - faster counting
+  // Counter animation - MUCH faster counting
   useEffect(() => {
     if (statsInView) {
       const interval = setInterval(() => {
@@ -60,8 +60,8 @@ const Who = () => {
 
           for (let i = 0; i < targetNumbers.length; i++) {
             if (newCounters[i] < targetNumbers[i]) {
-              // Increased increment speed for faster counting
-              const increment = Math.max(1, Math.ceil(targetNumbers[i] / 20)); // Even faster increment
+              // Significantly increased increment speed
+              const increment = Math.max(3, Math.ceil(targetNumbers[i] / 10)); // Much faster increment
               newCounters[i] = Math.min(newCounters[i] + increment, targetNumbers[i]);
               if (newCounters[i] < targetNumbers[i]) completed = false;
             }
@@ -70,7 +70,7 @@ const Who = () => {
           if (completed) clearInterval(interval);
           return newCounters;
         });
-      }, 15); // Even faster interval (from 20ms to 15ms)
+      }, 10); // Ultra-fast interval (reduced from 15ms to 10ms)
 
       return () => clearInterval(interval);
     }
@@ -81,25 +81,25 @@ const Who = () => {
     setCounters([0, 0, 0, 0]);
   };
 
-  // Animation variants - faster durations
+  // Animation variants - much faster durations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.08, // Faster staggering (from 0.1)
-        duration: 0.4 // Faster fade in (from 0.5)
+        staggerChildren: 0.05, // Much faster staggering
+        duration: 0.3 // Much faster fade in
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 15, opacity: 0 }, // Reduced y distance
+    hidden: { y: 10, opacity: 0 }, // Less distance for faster appearance
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" } // Even faster animation
+      transition: { duration: 0.2, ease: "easeOut" } // Ultra-fast animation
     }
   };
 
@@ -108,19 +108,19 @@ const Who = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.3,
-        delay: 0.1, // Reduced delay
+        duration: 0.2,
+        delay: 0.05, // Minimal delay
         when: "beforeChildren"
       }
     }
   };
 
   const imageVariants = {
-    hidden: { scale: 1.03, opacity: 0 }, // Further reduced scale
+    hidden: { scale: 1.02, opacity: 0 }, // Minimal scale for faster appearance
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" } // Faster animation
+      transition: { duration: 0.3, ease: "easeOut" } // Much faster animation
     }
   };
 
@@ -130,29 +130,29 @@ const Who = () => {
       x: 16,
       y: 16,
       opacity: 1,
-      transition: { duration: 0.3, delay: 0.2 } // Reduced delay more
+      transition: { duration: 0.2, delay: 0.1 } // Reduced delay further
     }
   };
 
   const statsContainerVariants = {
-    hidden: { opacity: 0, y: 20 }, // Reduced movement distance
+    hidden: { opacity: 0, y: 15 }, // Less movement for faster animation
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4, // Faster animation
+        duration: 0.25, // Ultra-fast animation
         when: "beforeChildren",
-        staggerChildren: 0.06 // Faster staggering
+        staggerChildren: 0.03 // Much faster staggering
       }
     }
   };
 
   const statsItemVariants = {
-    hidden: { scale: 0.97, opacity: 0 }, // Less scale change for faster appearance
+    hidden: { scale: 0.98, opacity: 0 }, // Minimal scale change for instant appearance
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.2, ease: "easeOut" } // Even faster animation
+      transition: { duration: 0.15, ease: "easeOut" } // Ultra-fast animation
     }
   };
 
@@ -204,9 +204,10 @@ const Who = () => {
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "#e88a2a",
-                boxShadow: "0 10px 15px -3px rgba(255, 153, 51, 0.3)"
+                boxShadow: "0 10px 15px -3px rgba(255, 153, 51, 0.3)",
+                transition: { duration: 0.15 } // Faster hover effect
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }} // Faster tap effect
             >
               Read More
             </motion.button>
@@ -247,20 +248,20 @@ const Who = () => {
             <motion.div
               className="flex flex-col items-center text-center"
               variants={statsItemVariants}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.1 } }} // Faster hover
             >
               <motion.div
                 className="bg-gray-800 p-4 rounded-full mb-4"
                 whileHover={{
                   boxShadow: "0 0 20px 5px rgba(255, 153, 51, 0.2)",
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.1 } // Faster hover effect
                 }}
                 animate={statsInView ? {
                   scale: [1, 1.05, 1],
                   transition: {
                     repeat: Infinity,
                     repeatType: "reverse",
-                    duration: 1.2 // Faster pulse
+                    duration: 0.8 // Much faster pulse animation
                   }
                 } : { scale: 1 }}
               >
@@ -276,21 +277,21 @@ const Who = () => {
             <motion.div
               className="flex flex-col items-center text-center"
               variants={statsItemVariants}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
             >
               <motion.div
                 className="bg-gray-800 p-4 rounded-full mb-4"
                 whileHover={{
                   boxShadow: "0 0 20px 5px rgba(255, 153, 51, 0.2)",
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.1 }
                 }}
                 animate={statsInView ? {
                   scale: [1, 1.05, 1],
                   transition: {
                     repeat: Infinity,
                     repeatType: "reverse",
-                    duration: 1.2,
-                    delay: 0.1
+                    duration: 0.8,
+                    delay: 0.05 // Minimal staggered delay
                   }
                 } : { scale: 1 }}
               >
@@ -306,21 +307,21 @@ const Who = () => {
             <motion.div
               className="flex flex-col items-center text-center"
               variants={statsItemVariants}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
             >
               <motion.div
                 className="bg-gray-800 p-4 rounded-full mb-4"
                 whileHover={{
                   boxShadow: "0 0 20px 5px rgba(255, 153, 51, 0.2)",
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.1 }
                 }}
                 animate={statsInView ? {
                   scale: [1, 1.05, 1],
                   transition: {
                     repeat: Infinity,
                     repeatType: "reverse",
-                    duration: 1.2,
-                    delay: 0.2
+                    duration: 0.8,
+                    delay: 0.1 // Minimal staggered delay
                   }
                 } : { scale: 1 }}
               >
@@ -336,21 +337,21 @@ const Who = () => {
             <motion.div
               className="flex flex-col items-center text-center"
               variants={statsItemVariants}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
             >
               <motion.div
                 className="bg-gray-800 p-4 rounded-full mb-4"
                 whileHover={{
                   boxShadow: "0 0 20px 5px rgba(255, 153, 51, 0.2)",
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.1 }
                 }}
                 animate={statsInView ? {
                   scale: [1, 1.05, 1],
                   transition: {
                     repeat: Infinity,
                     repeatType: "reverse",
-                    duration: 1.2,
-                    delay: 0.3
+                    duration: 0.8,
+                    delay: 0.15 // Minimal staggered delay
                   }
                 } : { scale: 1 }}
               >

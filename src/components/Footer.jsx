@@ -9,27 +9,27 @@ const Footer = () => {
     const linksRef = React.useRef(null);
     const joinRef = React.useRef(null);
     const copyrightRef = React.useRef(null);
-    
+
     // Create animation controls
     const footerControls = useAnimation();
     const addressControls = useAnimation();
     const linksControls = useAnimation();
     const joinControls = useAnimation();
     const copyrightControls = useAnimation();
-    
+
     // Check if elements are in view
     const isFooterInView = useInView(footerRef, { once: false, amount: 0.1 });
     const isAddressInView = useInView(addressRef, { once: false, amount: 0.3 });
     const isLinksInView = useInView(linksRef, { once: false, amount: 0.3 });
     const isJoinInView = useInView(joinRef, { once: false, amount: 0.3 });
     const isCopyrightInView = useInView(copyrightRef, { once: false, amount: 0.5 });
-    
+
     // Animation variants
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
     };
-    
+
     const staggerChildren = {
         hidden: { opacity: 0 },
         visible: {
@@ -39,7 +39,7 @@ const Footer = () => {
             }
         }
     };
-    
+
     const itemFade = {
         hidden: { opacity: 0, x: -10 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.4 } }
@@ -53,7 +53,7 @@ const Footer = () => {
             footerControls.start("hidden");
         }
     }, [isFooterInView, footerControls]);
-    
+
     useEffect(() => {
         if (isAddressInView) {
             addressControls.start("visible");
@@ -61,7 +61,7 @@ const Footer = () => {
             addressControls.start("hidden");
         }
     }, [isAddressInView, addressControls]);
-    
+
     useEffect(() => {
         if (isLinksInView) {
             linksControls.start("visible");
@@ -69,7 +69,7 @@ const Footer = () => {
             linksControls.start("hidden");
         }
     }, [isLinksInView, linksControls]);
-    
+
     useEffect(() => {
         if (isJoinInView) {
             joinControls.start("visible");
@@ -77,7 +77,7 @@ const Footer = () => {
             joinControls.start("hidden");
         }
     }, [isJoinInView, joinControls]);
-    
+
     useEffect(() => {
         if (isCopyrightInView) {
             copyrightControls.start("visible");
@@ -87,7 +87,7 @@ const Footer = () => {
     }, [isCopyrightInView, copyrightControls]);
 
     return (
-        <motion.footer 
+        <motion.footer
             ref={footerRef}
             initial="hidden"
             animate={footerControls}
@@ -110,77 +110,77 @@ const Footer = () => {
             <div className="relative z-10 container mx-auto px-6 md:px-24 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Address Section */}
-                    <motion.div 
+                    <motion.div
                         ref={addressRef}
                         initial="hidden"
                         animate={addressControls}
                         variants={fadeInUp}
                         className="flex flex-col space-y-6"
                     >
-                        <motion.h3 
+                        <motion.h3
                             variants={itemFade}
                             className="text-2xl font-bold border-b-2 border-orange-500 pb-2 inline-block"
                         >
                             Address
                         </motion.h3>
 
-                        <motion.div 
+                        <motion.div
                             variants={itemFade}
                             className="flex items-start space-x-3"
                         >
                             <MapPin className="text-orange-400 mt-1 flex-shrink-0" size={20} />
-                            <p className="text-gray-100">373/1, Collectorate Campus, Dhawari, Satna, Madhya Pradesh 485001.</p>
+                            <p className="text-gray-100">Ujjain Incubation Center <br /> Samrat Vikramaditya Complex <br /> Kothi Palace Road, Ujjain, MP 456010</p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             variants={itemFade}
                             className="flex items-center space-x-3"
                         >
                             <Phone className="text-orange-400 flex-shrink-0" size={18} />
-                            <p className="text-gray-100">9131925108</p>
+                            <p className="text-gray-100">+91-9876543210</p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             variants={itemFade}
                             className="flex items-center space-x-3"
                         >
                             <Mail className="text-orange-400 flex-shrink-0" size={18} />
-                            <p className="text-gray-100">connect@sicsatna.org</p>
+                            <p className="text-gray-100">connect@ujjainincubation.org</p>
                         </motion.div>
 
                         {/* Social Media Icons */}
-                        <motion.div 
+                        <motion.div
                             variants={staggerChildren}
                             className="flex space-x-3 mt-2"
                         >
-                            <motion.a 
+                            <motion.a
                                 variants={itemFade}
                                 whileHover={{ scale: 1.1, backgroundColor: "#f97316" }}
-                                href="#" 
+                                href="#"
                                 className="p-2 bg-gray-800/60 hover:bg-orange-500 rounded-full transition duration-300 flex items-center justify-center"
                             >
                                 <Twitter size={18} />
                             </motion.a>
-                            <motion.a 
+                            <motion.a
                                 variants={itemFade}
                                 whileHover={{ scale: 1.1, backgroundColor: "#f97316" }}
-                                href="#" 
+                                href="#"
                                 className="p-2 bg-gray-800/60 hover:bg-orange-500 rounded-full transition duration-300 flex items-center justify-center"
                             >
                                 <Facebook size={18} />
                             </motion.a>
-                            <motion.a 
+                            <motion.a
                                 variants={itemFade}
                                 whileHover={{ scale: 1.1, backgroundColor: "#f97316" }}
-                                href="#" 
+                                href="#"
                                 className="p-2 bg-gray-800/60 hover:bg-orange-500 rounded-full transition duration-300 flex items-center justify-center"
                             >
                                 <Instagram size={18} />
                             </motion.a>
-                            <motion.a 
+                            <motion.a
                                 variants={itemFade}
                                 whileHover={{ scale: 1.1, backgroundColor: "#f97316" }}
-                                href="#" 
+                                href="#"
                                 className="p-2 bg-gray-800/60 hover:bg-orange-500 rounded-full transition duration-300 flex items-center justify-center"
                             >
                                 <Linkedin size={18} />
@@ -195,17 +195,17 @@ const Footer = () => {
                         animate={linksControls}
                         variants={fadeInUp}
                     >
-                        <motion.h3 
+                        <motion.h3
                             variants={itemFade}
                             className="text-2xl font-bold border-b-2 border-orange-500 pb-2 inline-block"
                         >
                             Important Links
                         </motion.h3>
-                        <motion.ul 
+                        <motion.ul
                             variants={staggerChildren}
                             className="mt-6 space-y-4"
                         >
-                            <motion.li 
+                            <motion.li
                                 variants={itemFade}
                                 className="transition-transform hover:translate-x-2 duration-300"
                             >
@@ -214,7 +214,7 @@ const Footer = () => {
                                     <span className="group-hover:text-orange-300 transition">MP Startup</span>
                                 </a>
                             </motion.li>
-                            <motion.li 
+                            <motion.li
                                 variants={itemFade}
                                 className="transition-transform hover:translate-x-2 duration-300"
                             >
@@ -226,24 +226,24 @@ const Footer = () => {
                         </motion.ul>
                     </motion.div>
 
-                    {/* Join SIC */}
+                    {/* Join UIC */}
                     <motion.div
                         ref={joinRef}
                         initial="hidden"
                         animate={joinControls}
                         variants={fadeInUp}
                     >
-                        <motion.h3 
+                        <motion.h3
                             variants={itemFade}
                             className="text-2xl font-bold border-b-2 border-orange-500 pb-2 inline-block"
                         >
-                            Join SIC
+                            Join UIC
                         </motion.h3>
-                        <motion.ul 
+                        <motion.ul
                             variants={staggerChildren}
                             className="mt-6 space-y-4"
                         >
-                            <motion.li 
+                            <motion.li
                                 variants={itemFade}
                                 className="transition-transform hover:translate-x-2 duration-300"
                             >
@@ -252,7 +252,7 @@ const Footer = () => {
                                     <span className="group-hover:text-orange-300 transition">Startup Registration</span>
                                 </a>
                             </motion.li>
-                            <motion.li 
+                            <motion.li
                                 variants={itemFade}
                                 className="transition-transform hover:translate-x-2 duration-300"
                             >
@@ -261,7 +261,7 @@ const Footer = () => {
                                     <span className="group-hover:text-orange-300 transition">Mentor Registration</span>
                                 </a>
                             </motion.li>
-                            <motion.li 
+                            <motion.li
                                 variants={itemFade}
                                 className="transition-transform hover:translate-x-2 duration-300"
                             >
@@ -270,7 +270,7 @@ const Footer = () => {
                                     <span className="group-hover:text-orange-300 transition">Investor Register</span>
                                 </a>
                             </motion.li>
-                            <motion.li 
+                            <motion.li
                                 variants={itemFade}
                                 className="transition-transform hover:translate-x-2 duration-300"
                             >
@@ -284,7 +284,7 @@ const Footer = () => {
                 </div>
 
                 {/* Copyright Section */}
-                <motion.div 
+                <motion.div
                     ref={copyrightRef}
                     initial="hidden"
                     animate={copyrightControls}
@@ -292,13 +292,13 @@ const Footer = () => {
                     className="mt-16 pt-6 border-t border-gray-500/30"
                 >
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <motion.p 
+                        <motion.p
                             variants={itemFade}
                             className="text-gray-300 font-light"
                         >
-                            © Sicsatna.org. All Right Reserved.
+                            © UICUjjain.org. All Right Reserved.
                         </motion.p>
-                        <motion.div 
+                        <motion.div
                             variants={itemFade}
                             className="flex items-center space-x-2 mt-4 md:mt-0"
                         >
