@@ -7,6 +7,7 @@ import axios from 'axios';
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Country, State, City } from "country-state-city";
+import API_URL from './Config';
 
 const PartnerRegister = () => {
     const servicesData = pageData.pages.partnerregister;
@@ -178,7 +179,7 @@ const PartnerRegister = () => {
                 mobile: formData.phone_no // Ensure mobile field is populated with phone_no
             };
 
-            const response = await axios.post('http://localhost:5000/api/partners/partner-register', submissionData);
+            const response = await axios.post(`${API_URL}/api/partners/partner-register`, submissionData);
             console.log('Submission response:', response.data);
             setSubmitSuccess(true);
 

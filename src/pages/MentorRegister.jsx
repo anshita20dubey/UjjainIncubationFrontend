@@ -7,6 +7,7 @@ import axios from 'axios';
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Country, State, City } from "country-state-city";
+import API_URL from './Config';
 
 const MentorRegister = () => {
     const servicesData = pageData.pages.mentorregister;
@@ -165,7 +166,7 @@ const MentorRegister = () => {
                 mobile: formData.phone_no
             };
 
-            const response = await axios.post('http://localhost:5000/api/mentors/mentor-register', submissionData);
+            const response = await axios.post(`${API_URL}/api/mentors/mentor-register`, submissionData);
             console.log('Submission response:', response.data);
             setSubmitSuccess(true);
 

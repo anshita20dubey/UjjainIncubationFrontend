@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import axios from 'axios';
+import API_URL from '../pages/Config';
 
 // Animation variants for sections and form elements
 const sectionVariants = {
@@ -93,7 +94,7 @@ const JoinForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/join/women-cell', formData);
+      const response = await axios.post(`${API_URL}/api/join/women-cell`, formData);
       setSuccess('Form submitted successfully!');
       setError('');
       setFormData({

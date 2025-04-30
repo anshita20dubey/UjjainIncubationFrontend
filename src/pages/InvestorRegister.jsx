@@ -7,6 +7,7 @@ import axios from 'axios';
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Country, State, City } from "country-state-city";
+import API_URL from './Config';
 
 const InvestorRegister = () => {
     const servicesData = pageData.pages.investorregister;
@@ -183,7 +184,7 @@ const InvestorRegister = () => {
                 mobile: formData.phone_no
             };
 
-            const response = await axios.post('http://localhost:5000/api/investors/investor-register', submissionData);
+            const response = await axios.post(`${API_URL}/api/investors/investor-register`, submissionData);
             console.log('Submission response:', response.data);
             setSubmitSuccess(true);
 
