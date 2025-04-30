@@ -122,17 +122,19 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center space-x-3"
           >
-            <motion.img
-              src="/images/logo-uscl.jpg"
-              alt="Ujjain Incubation Center Logo"
-              className="h-8 sm:h-10 w-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            />
-            <span className="text-gray-800 font-semibold text-lg sm:text-xl tracking-tight">
-              Ujjain Incubation Center
-            </span>
+            <a href='/' className="flex items-center space-x-3">
+              <motion.img
+                src="/images/logo-uscl.jpg"
+                alt="Ujjain Incubation Center Logo"
+                className="h-8 sm:h-10 w-auto"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              />
+              <span className="text-gray-800 font-semibold text-lg sm:text-xl tracking-tight">
+                Ujjain Incubation Center
+              </span>
+            </a>
           </motion.div>
 
           {/* Mobile menu button */}
