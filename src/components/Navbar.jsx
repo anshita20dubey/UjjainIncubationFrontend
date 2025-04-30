@@ -45,9 +45,8 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`bg-white sticky top-0 z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
-        scrolled ? 'shadow-md' : ''
-      }`}
+      className={`bg-white sticky top-0 z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300 ${scrolled ? 'shadow-md' : ''
+        }`}
     >
       {/* Top Contact Bar */}
       <div className="container mx-auto px-4 py-2 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm">
@@ -121,40 +120,19 @@ const Navbar = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center"
+            className="flex items-center space-x-3"
           >
-            <motion.div
-              className="mr-2"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.7 }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 sm:h-10 sm:w-10 text-[#FF9933]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-              </svg>
-            </motion.div>
-            <div>
-              <motion.h1
-                className="text-xl sm:text-2xl font-bold text-[#FF9933]"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                Ujjain SmartCity
-              </motion.h1>
-              <motion.p
-                className="text-[10px] sm:text-xs text-gray-600"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                Incubation Center
-              </motion.p>
-            </div>
+            <motion.img
+              src="/images/logo-uscl.jpg"
+              alt="Ujjain Incubation Center Logo"
+              className="h-8 sm:h-10 w-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            />
+            <span className="text-gray-800 font-semibold text-lg sm:text-xl tracking-tight">
+              Ujjain Incubation Center
+            </span>
           </motion.div>
 
           {/* Mobile menu button */}
@@ -192,7 +170,8 @@ const Navbar = () => {
               <motion.a
                 key={item}
                 href={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}
-                className={`${item === 'HOME' ? 'text-[#FF9933]' : 'text-gray-600 hover:text-[#FF9933]'} font-medium text-sm xl:text-base`}
+                className={`${item === 'HOME' ? 'text-[#FF9933]' : 'text-gray-600 hover:text-[#FF9933]'
+                  } font-medium text-sm xl:text-base`}
                 whileHover={{ y: -2 }}
                 transition={{ type: 'spring', stiffness: 400 }}
               >
@@ -240,17 +219,19 @@ const Navbar = () => {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    {['Startup Registration', 'Mentor Registration', 'Investor Registration', 'Partner Registration'].map((item) => (
-                      <motion.a
-                        key={item}
-                        href={joinUICPaths[item]}
-                        className="block px-4 py-2 text-gray-600 hover:bg-[#FF9933] hover:text-white text-sm"
-                        whileHover={{ x: 5 }}
-                        transition={{ type: 'spring', stiffness: 400 }}
-                      >
-                        {item}
-                      </motion.a>
-                    ))}
+                    {['Startup Registration', 'Mentor Registration', 'Investor Registration', 'Partner Registration'].map(
+                      (item) => (
+                        <motion.a
+                          key={item}
+                          href={joinUICPaths[item]}
+                          className="block px-4 py-2 text-gray-600 hover:bg-[#FF9933] hover:text-white text-sm"
+                          whileHover={{ x: 5 }}
+                          transition={{ type: 'spring', stiffness: 400 }}
+                        >
+                          {item}
+                        </motion.a>
+                      )
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -117,6 +117,21 @@ const Footer = () => {
                         variants={fadeInUp}
                         className="flex flex-col space-y-6"
                     >
+                        <motion.div
+                            variants={itemFade}
+                            className="flex items-center space-x-3"
+                        >
+                            <motion.img
+                                src="/images/logo-uscl.jpg"
+                                alt="Ujjain Incubation Center Logo"
+                                className="h-8 sm:h-10 w-auto"
+                                variants={itemFade}
+                            />
+                            <span className="text-gray-100 font-semibold text-lg sm:text-xl tracking-tight">
+                                Ujjain Incubation Center
+                            </span>
+                        </motion.div>
+
                         <motion.h3
                             variants={itemFade}
                             className="text-2xl font-bold border-b-2 border-orange-500 pb-2 inline-block"
@@ -129,7 +144,7 @@ const Footer = () => {
                             className="flex items-start space-x-3"
                         >
                             <MapPin className="text-orange-400 mt-1 flex-shrink-0" size={20} />
-                            <p className="text-gray-100">Ujjain Incubation Center <br /> Samrat Vikramaditya Complex <br /> Kothi Palace Road, Ujjain, MP 456010</p>
+                            <p className="text-gray-100">Samrat Vikramaditya Complex <br /> Kothi Palace Road, Ujjain, MP 456010</p>
                         </motion.div>
 
                         <motion.div
@@ -303,7 +318,7 @@ const Footer = () => {
                             className="flex items-center space-x-2 mt-4 md:mt-0"
                         >
                             <span className="text-xs text-gray-400">Designed by</span>
-                            <img src="/api/placeholder/80/20" alt="Designer logo" className="h-5 opacity-80" />
+                            <img src="/images/logo-im.png" alt="Designer logo" className="h-5 opacity-80" />
                         </motion.div>
                     </div>
                 </motion.div>
