@@ -12,6 +12,7 @@ import StartupRegister from './pages/StartupRegister'
 import MentorRegister from './pages/MentorRegister'
 import InvestorRegister from './pages/InvestorRegister'
 import PartnerRegister from './pages/PartnerRegister'
+import './index.css';
 
 
 const App = () => {

@@ -144,7 +144,7 @@ const Navbar = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                U.J.A.N
+                Ujjain SmartCity
               </motion.h1>
               <motion.p
                 className="text-[10px] sm:text-xs text-gray-600"

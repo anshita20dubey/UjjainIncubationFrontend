@@ -5,6 +5,7 @@ import Who from '../components/Who'
 import SpecialServices from '../components/SpecialServices'
 import Ecosystem from '../components/Ecosystem'
 import Footer from '../components/Footer'
+import '../index.css'
 
 const Home = () => {
     return (
