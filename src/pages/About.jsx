@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Who from '../components/Who';
 import Header1 from '../components/Header1';
 import pageData from './serviceData.json'; // Import the centralized JSON file
+import Chatbot from '../components/Chatbot';
 
 const Services = () => {
   const servicesData = pageData.pages.about; // Access the about page data
@@ -14,6 +15,7 @@ const Services = () => {
       <Header1 title={servicesData.title} breadcrumbs={servicesData.breadcrumbs} />
       <Who />
       <Footer />
+      <Chatbot/>
     </>
   );
 };

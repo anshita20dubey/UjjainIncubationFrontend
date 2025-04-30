@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Header1 from '../components/Header1';
 import pageData from './serviceData.json'; // Import the centralized JSON file
+import Chatbot from '../components/Chatbot';
 
 const EventCard = ({ title, description, image, index }) => {
     const cardRef = useRef(null);
@@ -248,6 +249,7 @@ const Events = () => {
             </div>
 
             <Footer />
+            <Chatbot />
         </>
     );
 };

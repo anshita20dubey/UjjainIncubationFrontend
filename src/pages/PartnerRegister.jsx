@@ -8,6 +8,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Country, State, City } from "country-state-city";
 import API_URL from './Config';
+import Chatbot from '../components/Chatbot';
 
 const PartnerRegister = () => {
     const servicesData = pageData.pages.partnerregister;
@@ -446,6 +447,7 @@ const PartnerRegister = () => {
             </div>
 
             <Footer />
+            <Chatbot />
         </>
     );
 };

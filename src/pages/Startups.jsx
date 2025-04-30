@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Header1 from '../components/Header1';
 import pageData from './serviceData.json'; // Centralized JSON data
+import Chatbot from '../components/Chatbot';
+import '../index.css'
 
 const Startups = () => {
   const servicesData = pageData.pages.startups; // Access startups page data
@@ -76,6 +78,7 @@ const Startups = () => {
       </section>
 
       <Footer />
+      <Chatbot />
     </div>
   );
 };

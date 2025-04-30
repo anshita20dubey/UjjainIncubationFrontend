@@ -7,16 +7,18 @@ import Enterpreneur from '../components/Enterpreneur';
 import ServicesGrid from '../components/ServicesGrid';
 import JoinForm from '../components/JoinForm';
 import pageData from './serviceData.json'; // Import the centralized JSON file
+import Chatbot from '../components/Chatbot';
+import '../index.css'
 
 // Animation variants for sections
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.6, 
-      ease: 'easeOut' 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut'
     }
   }
 };
@@ -24,7 +26,7 @@ const sectionVariants = {
 // Reusable Section component to handle animations
 const AnimatedSection = ({ children, className }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { 
+  const isInView = useInView(ref, {
     threshold: 0.2, // Trigger when 20% of the section is visible
     once: false // Animation triggers every time the section comes into view
   });
@@ -61,6 +63,7 @@ const WomenCell = () => {
         <JoinForm />
       </AnimatedSection>
       <Footer />
+      <Chatbot />
     </>
   );
 };

@@ -8,6 +8,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Country, State, City } from "country-state-city";
 import API_URL from './Config';
+import Chatbot from '../components/Chatbot';
 
 const StartupRegister = () => {
     const servicesData = pageData.pages.startupregister;
@@ -458,6 +459,7 @@ const StartupRegister = () => {
             </div>
 
             <Footer />
+            <Chatbot />
         </>
     );
 };

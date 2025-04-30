@@ -6,6 +6,7 @@ import SpecialServices from '../components/SpecialServices'
 import Ecosystem from '../components/Ecosystem'
 import Footer from '../components/Footer'
 import '../index.css'
+import Chatbot from '../components/Chatbot'
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <SpecialServices />
             <Ecosystem />
             <Footer />
+            <Chatbot />
         </div>
     )
 }
